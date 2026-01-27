@@ -20,3 +20,6 @@ def run():
     req = urllib.request.Request(webhook_url, data=data, method="POST")
     req.add_header('Content-Type', 'application/json')
     urllib.request.urlopen(req)
+
+if __name__ == "__main__":
+    run()
